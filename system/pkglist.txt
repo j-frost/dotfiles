@@ -1,4 +1,5 @@
 alsa-utils
+aspcud
 autoconf
 automake
 bash
@@ -6,8 +7,10 @@ bind-tools
 binutils
 bison
 bzip2
+clingo
 clipmenu
 coreutils
+cppo
 cryptsetup
 cups
 device-mapper
@@ -18,11 +21,9 @@ diffutils
 direnv
 dmenu
 docker
+dune
 e2fsprogs
-eclipse-java
 efibootmgr
-enpass-bin
-fakeroot
 feh
 ffmpeg
 file
@@ -30,6 +31,7 @@ filesystem
 findutils
 flameshot
 flex
+fuse2
 gawk
 gcc
 gcc-libs
@@ -39,6 +41,7 @@ git
 glibc
 google-chrome
 grep
+groff
 grub
 gucharmap
 gzip
@@ -52,7 +55,7 @@ imwheel
 inetutils
 iproute2
 iputils
-jfsutils
+keepassxc
 keychain
 less
 libtool
@@ -71,6 +74,14 @@ nano
 netctl
 nmap
 noto-fonts
+ocaml
+ocaml-biniou
+ocaml-compiler-libs
+ocaml-easy-format
+ocaml-findlib
+ocaml-yojson
+ocamlbuild
+opam
 openssh
 openvpn
 openvpn-update-systemd-resolved
@@ -79,6 +90,7 @@ patch
 pciutils
 pcmciautils
 perl
+pkgconf
 polybar
 procps-ng
 psmisc
@@ -91,13 +103,14 @@ read-edid
 redshift
 reiserfsprogs
 rofi
-rxvt-unicode-wcwidthcallback
+rxvt-unicode
 s-nail
 sed
 shadow
 sshfs
 sudo
 sysfsutils
+systemd
 systemd-sysvcompat
 tar
 terminus-font

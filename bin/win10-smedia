@@ -1,3 +1,0 @@
-#!/bin/sh
-
-VirtualBox --startvm "win10-smedia"

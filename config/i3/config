@@ -97,23 +97,23 @@ bindsym $mod+q kill
 # ------------------------------------------
 
 # switch between windows
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move windows around
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+x move workspace to output right
 
 # resize windows
-bindsym $win+Shift+Down resize shrink height 5 px or 5 ppt
-bindsym $win+Shift+Up resize grow height 5 px or 5 ppt
-bindsym $win+Shift+Left resize grow width 5 px or 5 ppt
-bindsym $win+Shift+Right resize shrink width 5 px or 5 ppt
+bindsym $win+Shift+j resize shrink height 5 px or 5 ppt
+bindsym $win+Shift+k resize grow height 5 px or 5 ppt
+bindsym $win+Shift+h resize grow width 5 px or 5 ppt
+bindsym $win+Shift+l resize shrink width 5 px or 5 ppt
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -124,8 +124,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # split horizontal or vertical
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $win+h split h
+bindsym $win+v split v
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
@@ -151,7 +151,7 @@ bindsym $mod+Ctrl+Shift+b exec $BROWSER --profile-directory="Profile 1"
 bindsym $mod+Shift+r exec ~/bin/xrefresh
 
 # lock screen
-bindsym $mod+Shift+l exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $win+l exec --no-startup-id ~/.config/i3/lock.sh
 
 # take screenshot
 bindsym $mod+Shift+o exec flameshot gui
@@ -176,11 +176,11 @@ for_window [instance="ranger"] resize set 2200 1200
 for_window [instance="ranger"] move scratchpad
 for_window [instance="ranger"] border pixel 3
 
-bindsym $mod+Shift+p [instance="Enpass"] scratchpad show; [instance="Enpass"] move position center
-for_window [instance="Enpass"] floating enable
-for_window [instance="Enpass"] resize set 2200 1200
-for_window [instance="Enpass"] move scratchpad
-for_window [instance="Enpass"] border pixel 3
+bindsym $mod+Shift+p [instance="keepassxc"] scratchpad show; [instance="keepassxc"] move position center
+for_window [instance="keepassxc"] floating enable
+for_window [instance="keepassxc"] resize set 2200 1200
+for_window [instance="keepassxc"] move scratchpad
+for_window [instance="keepassxc"] border pixel 3
 
 bindsym $mod+Shift+s [instance="dropdownshell"] scratchpad show; [instance="dropdownshell"] move position center
 for_window [instance="dropdownshell"] floating enable
@@ -207,7 +207,7 @@ for_window [instance="pythonshell"] border pixel 3
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec --no-startup-id exec enpass
+exec --no-startup-id exec keepassxc
 exec --no-startup-id exec flameshot
 
 exec --no-startup-id $term +transparent -name dropdownshell -e zsh

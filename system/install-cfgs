@@ -9,7 +9,7 @@ sudo cp mirrorlist /etc/pacman.d
 sudo cp mkinitcpio.conf /etc
 
 sudo cp suspend@.service /etc/systemd/system
-sudo systemctl enable suspend@segfault
+sudo systemctl enable suspend@j-frost
 
 sudo cp vconsole.conf /etc
 

@@ -9,25 +9,16 @@ xrandr --dpi 175
 xset -b
 xset r rate 220 40
 
-# umlauts
-xmodmap ~/.xmodmap
-
-# switch left alt and left cmd key on apple keyboards
-~/bin/keyboard_reconfig
-
 # lock screen after 10 minutes
-xautolock -time 10 -locker /home/segfault/.config/i3/lock.sh &
+xautolock -time 10 -locker /home/j-frost/.config/i3/lock.sh &
 
 # xrandr management
 ~/bin/xrefresh
 
 # manage ssh-keys
-keychain ~/.ssh/id_dsa
+keychain ~/.ssh/id_rsa
 [ -f ~/.keychain/$HOSTNAME-sh ] && . ~/.keychain/$HOSTNAME-sh 2>/dev/null
 [ -f ~/.keychain/$HOSTNAME-sh-gpg ] && . ~/.keychain/$HOSTNAME-sh-gpg 2>/dev/null
-
-# night shift, location: //SEIBERT/MEDIA GmbH HQ
-redshift -l 50.0786854:8.234806 &
 
 # start i3 window manager
 exec i3

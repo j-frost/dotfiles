@@ -37,10 +37,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/segfault/google-cloud-sdk/path.zsh.inc' ]; then source '/home/segfault/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/j-frost/google-cloud-sdk/path.zsh.inc' ]; then source '/home/segfault/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/segfault/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/segfault/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/j-frost/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/segfault/google-cloud-sdk/completion.zsh.inc'; fi
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit

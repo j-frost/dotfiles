@@ -1,3 +1,0 @@
-#!/bin/sh
-
-$BROWSER --app=https://www.icloud.com/#mail --profile-directory="Profile 1"

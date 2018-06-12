@@ -398,7 +398,7 @@ menu-0-1-exec = sudo poweroff
 [module/vpn-smedia]
 type = custom/script
 exec = echo //S/M
-exec-if = pgrep -f "^openvpn --config /home/segfault/.secret/smedia.ovpn"
+exec-if = pgrep -f "^openvpn --config /home/j-frost/.secret/smedia.ovpn"
 interval = 5
 format-underline = #FFFF00
 format-prefix = " "

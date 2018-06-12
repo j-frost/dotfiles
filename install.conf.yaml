@@ -8,7 +8,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.apple-keyboard.xkb: apple-keyboard.xkb
     ~/.bash_profile:
       force: true
       path: bash_profile
@@ -38,16 +37,11 @@
     ~/.bw_teamvault_secrets.cfg: ~/.secret/.bw_teamvault_secrets.cfg
     ~/.profitbricks-auth: ~/.secret/.profitbricks-auth
     ~/.ssh: ~/.secret/.ssh
-    ~/git/isac/bw/.secrets.cfg:
+    ~/projects/isac/bw/.secrets.cfg:
       create: false
       path: ~/.secret/.bw_secrets.cfg
 
     ~/bin: bin
-
-    /usr/lib/eclipse/eclipse.ini:
-      force: true
-      relative: false
-      path: eclipse.ini
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

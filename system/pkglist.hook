@@ -6,4 +6,4 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /home/segfault/git/dotfiles/system/pkglist.txt'
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /home/j-frost/projects/dotfiles/system/pkglist.txt'
