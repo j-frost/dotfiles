@@ -1,0 +1,3 @@
+#!/bin/sh
+
+chromium --app=https://jira.apps.seibert-media.net/projects/INF

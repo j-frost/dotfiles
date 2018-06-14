@@ -1,0 +1,3 @@
+#!/bin/sh
+
+chromium --app=https://confluence.apps.seibert-media.net/plugins/microblog.action

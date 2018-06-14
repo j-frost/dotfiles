@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$BROWSER --app=https://timetracker.apps.seibert-media.net

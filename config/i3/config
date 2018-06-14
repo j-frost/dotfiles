@@ -9,7 +9,6 @@ set $term --no-startup-id urxvt
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
 ##################
 ##    DESIGN    ##
 ##################
@@ -31,7 +30,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-
 ##################
 ##  WORKSPACES  ##
 ##################
@@ -48,87 +46,84 @@ set $ws9 9
 set $ws10 10
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $win+1 workspace $ws1
+bindsym $win+2 workspace $ws2
+bindsym $win+3 workspace $ws3
+bindsym $win+4 workspace $ws4
+bindsym $win+5 workspace $ws5
+bindsym $win+6 workspace $ws6
+bindsym $win+7 workspace $ws7
+bindsym $win+8 workspace $ws8
+bindsym $win+9 workspace $ws9
+bindsym $win+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $win+Shift+1 move container to workspace $ws1
+bindsym $win+Shift+2 move container to workspace $ws2
+bindsym $win+Shift+3 move container to workspace $ws3
+bindsym $win+Shift+4 move container to workspace $ws4
+bindsym $win+Shift+5 move container to workspace $ws5
+bindsym $win+Shift+6 move container to workspace $ws6
+bindsym $win+Shift+7 move container to workspace $ws7
+bindsym $win+Shift+8 move container to workspace $ws8
+bindsym $win+Shift+9 move container to workspace $ws9
+bindsym $win+Shift+0 move container to workspace $ws10
 
-# workspace 1 default on notebook display
-workspace $ws1 output eDP1
-
-# start visual studio code editor on workspace 10
-assign [class="Code"] $ws10
-
+# start code editors to workspace 9
+assign [class="Code"] $ws9
+assign [class="jetbrains-idea"] $ws9
 
 ##################
 ## KEY BINDINGS ##
 ##################
 
 # reload, restart and exit i3 window manager
-bindsym $mod+Ctrl+Shift+c reload
-bindsym $mod+Ctrl+Shift+r restart
-bindsym $mod+Ctrl+Shift+e exec i3-msg exit
+bindsym $win+Ctrl+Shift+c reload
+bindsym $win+Ctrl+Shift+r restart
+bindsym $win+Ctrl+Shift+e exec i3-msg exit
 
 # start new terminal or any other programm
-bindsym $mod+Return exec $term -e zsh
-bindsym $mod+d exec zsh -c "rofi -show run" 
+bindsym $win+Return exec $term -e zsh
+bindsym $win+d exec zsh -c "rofi -show run" 
 
 # kill programm / close window
-bindsym $mod+q kill
+bindsym $win+q kill
 
 # ------------------------------------------
 
 # switch between windows
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $win+h focus left
+bindsym $win+j focus down
+bindsym $win+k focus up
+bindsym $win+l focus right
 
 # move windows around
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+x move workspace to output right
+bindsym $win+Shift+h move left
+bindsym $win+Shift+j move down
+bindsym $win+Shift+k move up
+bindsym $win+Shift+l move right
+bindsym $win+x move workspace to output right
 
 # resize windows
-bindsym $win+Shift+j resize shrink height 5 px or 5 ppt
-bindsym $win+Shift+k resize grow height 5 px or 5 ppt
-bindsym $win+Shift+h resize grow width 5 px or 5 ppt
-bindsym $win+Shift+l resize shrink width 5 px or 5 ppt
+bindsym $win+$mod+j resize shrink height 5 px or 5 ppt
+bindsym $win+$mod+k resize grow height 5 px or 5 ppt
+bindsym $win+$mod+h resize grow width 5 px or 5 ppt
+bindsym $win+$mod+l resize shrink width 5 px or 5 ppt
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $win+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $win+$mod+s layout stacking
+bindsym $win+$mod+w layout tabbed
+bindsym $win+$mod+e layout toggle split
 
 # split horizontal or vertical
-bindsym $win+h split h
-bindsym $win+v split v
+#bindsym $win+h split h
+#bindsym $win+v split v
 
 # toggle tiling / floating
-bindsym $mod+space floating toggle
+bindsym $win+space floating toggle
 
 # ------------------------------------------
 
@@ -144,62 +139,72 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 # ------------------------------------------
 
 # start browser with //SEIBERT/MEDIA profile (default) or private (Profile 1)
-bindsym $mod+Shift+b exec $BROWSER
-bindsym $mod+Ctrl+Shift+b exec $BROWSER --profile-directory="Profile 1"
+bindsym $win+Shift+b exec $BROWSER
+bindsym $win+Ctrl+Shift+b exec $BROWSER --profile-directory="Profile 1"
 
 # xrandr refresh after connecting or disconnecting displays
-bindsym $mod+Shift+r exec ~/bin/xrefresh
+bindsym $win+Shift+r exec ~/bin/xrefresh
 
 # lock screen
-bindsym $win+l exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $win+Ctrl+l exec --no-startup-id ~/.config/i3/lock.sh
 
 # take screenshot
-bindsym $mod+Shift+o exec flameshot gui
+bindsym $win+Shift+o exec flameshot gui
 
 # clipboard manager with clipmenu and dmenu
-bindsym $mod+Shift+v exec clipmenu -fn Terminus:size=10 -nb '#505050' -nf '#FFFFFF' -sb '#00FFFF' -sf '#000000' -l 20
-
+bindsym $win+Shift+v exec clipmenu -fn Terminus:size=10 -nb '#505050' -nf '#FFFFFF' -sb '#00FFFF' -sf '#000000' -l 20
 
 ##################
 ##  SCRATCHPAD  ##
 ##################
 
-bindsym $mod+Shift+c [instance="calendar"] scratchpad show; [instance="calendar"] move position center
+bindsym $win+Shift+c [instance="calendar"] scratchpad show; [instance="calendar"] move position center
 for_window [instance="calendar"] floating enable
 for_window [instance="calendar"] resize set 2400 1300
 for_window [instance="calendar"] move scratchpad
 for_window [instance="calendar"] border pixel 3
 
-bindsym $mod+Shift+f [instance="ranger"] scratchpad show; [instance="ranger"] move position center
+bindsym $win+Shift+f [instance="ranger"] scratchpad show; [instance="ranger"] move position center
 for_window [instance="ranger"] floating enable
 for_window [instance="ranger"] resize set 2200 1200
 for_window [instance="ranger"] move scratchpad
 for_window [instance="ranger"] border pixel 3
 
-bindsym $mod+Shift+p [instance="keepassxc"] scratchpad show; [instance="keepassxc"] move position center
+bindsym $win+Shift+p [instance="keepassxc"] scratchpad show; [instance="keepassxc"] move position center
 for_window [instance="keepassxc"] floating enable
-for_window [instance="keepassxc"] resize set 2200 1200
+for_window [instance="keepassxc"] resize set 2400 1300
 for_window [instance="keepassxc"] move scratchpad
 for_window [instance="keepassxc"] border pixel 3
 
-bindsym $mod+Shift+s [instance="dropdownshell"] scratchpad show; [instance="dropdownshell"] move position center
+bindsym $win+Shift+s [instance="dropdownshell"] scratchpad show; [instance="dropdownshell"] move position center
 for_window [instance="dropdownshell"] floating enable
 for_window [instance="dropdownshell"] resize set 2000 1000
 for_window [instance="dropdownshell"] move scratchpad
 for_window [instance="dropdownshell"] border pixel 3
 
-bindsym $mod+Shift+t [instance="todoist"] scratchpad show; [instance="todoist"] move position center
-for_window [instance="todoist"] floating enable
-for_window [instance="todoist"] resize set 1600 1300
-for_window [instance="todoist"] move scratchpad
-for_window [instance="todoist"] border pixel 3
+bindsym $win+Shift+a [instance="jira"] scratchpad show; [instance="jira"] move position center
+for_window [instance="jira"] floating enable
+for_window [instance="jira"] resize set 2400 1300
+for_window [instance="jira"] move scratchpad
+for_window [instance="jira"] border pixel 3
 
-bindsym $mod+Shift+y [instance="pythonshell"] scratchpad show; [instance="pythonshell"] move position center
-for_window [instance="pythonshell"] floating enable
-for_window [instance="pythonshell"] resize set 1200 500
-for_window [instance="pythonshell"] move scratchpad
-for_window [instance="pythonshell"] border pixel 3
+bindsym $win+Shift+t [instance="timetracker"] scratchpad show; [instance="timetracker"] move position center
+for_window [instance="timetracker"] floating enable
+for_window [instance="timetracker"] resize set 2400 1300
+for_window [instance="timetracker"] move scratchpad
+for_window [instance="timetracker"] border pixel 3
 
+bindsym $win+Shift+m [instance="microblog"] scratchpad show; [instance="microblog"] move position center
+for_window [instance="microblog"] floating enable
+for_window [instance="microblog"] resize set 2400 1300
+for_window [instance="microblog"] move scratchpad
+for_window [instance="microblog"] border pixel 3
+
+bindsym $win+Shift+u [instance="gchat"] scratchpad show; [instance="gchat"] move position center
+for_window [instance="gchat"] floating enable
+for_window [instance="gchat"] resize set 2400 1300
+for_window [instance="gchat"] move scratchpad
+for_window [instance="gchat"] border pixel 3
 
 #################
 ##  AUTOSTART  ##
@@ -210,10 +215,13 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id exec keepassxc
 exec --no-startup-id exec flameshot
 
-exec --no-startup-id $term +transparent -name dropdownshell -e zsh
-exec --no-startup-id $term +transparent -name pythonshell --font "xft:DejaVu Sans Mono for Powerline:size=16" -e zsh -c "python -q"
+exec --no-startup-id $term +transparent -name dropdownshell -e bash
 exec --no-startup-id $term +transparent -name ranger -e ranger
 
 exec --no-startup-id $term -name calendar -e calendar
-exec --no-startup-id $term -name todoist -e todoist
+exec --no-startup-id $term -name jira-board -e jira-board
+exec --no-startup-id $term -name timetracker -e timetracker
+exec --no-startup-id $term -name microblog -e microblog 
+
+exec --no-startup-id $term -name gchat -e gchat 
 

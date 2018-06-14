@@ -1,3 +1,5 @@
 [user]
 	email = jrost@seibert-media.net
 	name = Julian Felix Rost
+[url "ssh://git@bitbucket.apps.seibert-media.net:7999/"]
+	insteadOf = https://bitbucket.apps.seibert-media.net/scm/
