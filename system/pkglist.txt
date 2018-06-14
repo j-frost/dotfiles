@@ -6,6 +6,9 @@ bash
 bind-tools
 binutils
 bison
+bluez
+bluez-libs
+bluez-utils
 bzip2
 chromium
 clipmenu
@@ -70,7 +73,6 @@ man-db
 man-pages
 masterpdfeditor
 mdadm
-minizip
 nano
 netctl
 nmap
@@ -91,10 +93,10 @@ procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 pyenv-virtualenv
 pyqt5-common
 ranger
-re2
 read-edid
 redshift
 reiserfsprogs
@@ -102,9 +104,9 @@ rofi
 rsync
 rxvt-unicode
 s-nail
+sbc
 sed
 shadow
-snappy
 sshfs
 sudo
 sysfsutils

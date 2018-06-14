@@ -24,6 +24,30 @@ elif xrandr -q | grep "HDMI1 disconnected"; then
   fi
 fi
 
+if xrandr -q | grep "DP1 connected"; then 
+  xrandr --output DP1 --right-of eDP1 --scale 1.5x1.5 --mode 2560x1440 --primary
+  sleep 0.2
+  i3-msg "workspace 3, move workspace to output DP1"
+  i3-msg "workspace 4, move workspace to output DP1"
+  i3-msg "workspace 6, move workspace to output DP1"
+  i3-msg "workspace 7, move workspace to output DP1"
+  i3-msg "workspace 8, move workspace to output DP1"
+  i3-msg "workspace 9, move workspace to output DP1"
+  i3-msg "workspace 10, move workspace to output DP1"
+elif xrandr -q | grep "DP1 disconnected"; then
+  xrandr --output DP1 --auto 
+  if xrandr -q | grep "DP2 connected"; then 
+    sleep 0.2
+    i3-msg "workspace 3, move workspace to output DP2"
+    i3-msg "workspace 4, move workspace to output DP2"
+    i3-msg "workspace 6, move workspace to output DP2"
+    i3-msg "workspace 7, move workspace to output DP2"
+    i3-msg "workspace 8, move workspace to output DP2"
+    i3-msg "workspace 9, move workspace to output DP2"
+    i3-msg "workspace 10, move workspace to output DP2"
+  fi
+fi
+
 if xrandr -q | grep "DP2 connected"; then 
   xrandr --output DP2 --rotate right --pos 6400x-50 --scale 1.5x1.5 --auto
   sleep 0.2
