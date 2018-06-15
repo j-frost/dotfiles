@@ -215,7 +215,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id exec keepassxc
 exec --no-startup-id exec flameshot
 
-exec --no-startup-id $term +transparent -name dropdownshell -e bash
+exec --no-startup-id $term +transparent -name dropdownshell -e zsh
 exec --no-startup-id $term +transparent -name ranger -e ranger
 
 exec --no-startup-id $term -name calendar -e calendar

@@ -7,7 +7,6 @@ bind-tools
 binutils
 bison
 bluez
-bluez-libs
 bluez-utils
 bzip2
 chromium
@@ -23,6 +22,7 @@ diffutils
 direnv
 dmenu
 docker
+duplicity
 e2fsprogs
 efibootmgr
 fakeroot
@@ -78,6 +78,7 @@ netctl
 nmap
 nodejs
 noto-fonts
+ntfs-3g
 openssh
 openvpn
 openvpn-update-systemd-resolved
@@ -104,10 +105,10 @@ rofi
 rsync
 rxvt-unicode
 s-nail
-sbc
 sed
 shadow
 sshfs
+strace
 sudo
 sysfsutils
 systemd

@@ -14,6 +14,6 @@ if [ $SCREENS -gt 1 ]; then
   polybar right &
 fi
 
-polybar primary &
+polybar -c ~/.config/polybar/config.ini primary 2>&1 > /tmp/polybar_log &
 
 echo "Bars launched..."
