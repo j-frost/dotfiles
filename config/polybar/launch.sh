@@ -10,10 +10,10 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 if [ $SCREENS -gt 1 ]; then
-  polybar left &
-  polybar right &
+  polybar -c ~/.config/polybar/config.ini left &
+  polybar -c ~/.config/polybar/config.ini right &
 fi
 
-polybar -c ~/.config/polybar/config.ini primary 2>&1 > /tmp/polybar_log &
+polybar -c ~/.config/polybar/config.ini primary &
 
 echo "Bars launched..."
