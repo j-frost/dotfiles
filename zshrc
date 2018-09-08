@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 ZSH=~/.oh-my-zsh/
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -101,3 +103,7 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
 POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
 POWERLEVEL9K_VCS_GIT_ICON=''
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi

@@ -5,8 +5,6 @@
 ##
 
 ## Germany
-Server = http://archlinux.eu.mirror.zoidplex.net/$repo/os/$arch
-## Germany
 Server = http://mirrors.niyawe.de/archlinux/$repo/os/$arch
 ## Germany
 Server = http://repo.itmettke.de/archlinux/$repo/os/$arch

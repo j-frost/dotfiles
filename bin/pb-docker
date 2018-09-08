@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -ti --rm -v ~/.profitbricks-auth:/root/.profitbricks-auth profitbricks-cli "$@"
+docker run -ti --rm -v /home/j-frost/.profitbricks-auth:/root/.profitbricks-auth profitbricks-cli "$@"

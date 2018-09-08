@@ -1,5 +1,6 @@
 acpi
 alsa-utils
+ansible
 autoconf
 automake
 bash
@@ -23,6 +24,8 @@ diffutils
 direnv
 dmenu
 docker
+docker-compose
+dpkg
 duplicity
 e2fsprogs
 efibootmgr
@@ -34,6 +37,7 @@ filesystem
 findutils
 flameshot
 flex
+freetds
 gawk
 gcc
 gcc-libs
@@ -58,6 +62,8 @@ i3lock-blur
 i3status
 imwheel
 inetutils
+inkscape
+insomnia
 iproute2
 iputils
 jq
@@ -78,17 +84,22 @@ man-pages
 masterpdfeditor
 mdadm
 mkchromecast
+mtr
 nano
+net-tools
 netctl
 nmap
 nodejs
 noto-fonts
+npm
 ntfs-3g
-ocaml-pcre
+openldap
 openssh
 openvpn
 openvpn-update-systemd-resolved
+otf-takao
 pacman
+pacvim-git
 pandoc
 patch
 pavucontrol
@@ -97,6 +108,8 @@ pcmciautils
 perl
 pkgconf
 polybar
+postgresql
+postman-bin
 procps-ng
 psmisc
 pulseaudio
@@ -119,6 +132,7 @@ ruby-rdoc
 rubygems
 rxvt-unicode
 s-nail
+screen
 sed
 shadow
 sshfs
@@ -148,6 +162,7 @@ wpa_actiond
 wpa_supplicant
 xautolock
 xcalib
+xclip
 xf86-video-intel
 xfsprogs
 xiccd

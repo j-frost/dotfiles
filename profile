@@ -17,6 +17,8 @@ export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export GEM_HOME=$HOME/.gem
 eval "$(rbenv init -)"
 
+export PATH=~/.npm-global/bin:$PATH
+
 export PATH=$HOME/bin:$PATH
 
 # use GTK2 for SWT cause of bugs with hidpi

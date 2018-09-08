@@ -1,52 +1,30 @@
 #!/bin/sh
 
-if xrandr -q | grep "HDMI1 connected"; then 
-  xrandr --output HDMI1 --right-of eDP1 --scale 1.5x1.5 --mode 2560x1440 --primary
-  sleep 0.2
-  i3-msg "workspace 3, move workspace to output HDMI1"
-  i3-msg "workspace 4, move workspace to output HDMI1"
-  i3-msg "workspace 6, move workspace to output HDMI1"
-  i3-msg "workspace 7, move workspace to output HDMI1"
-  i3-msg "workspace 8, move workspace to output HDMI1"
-  i3-msg "workspace 9, move workspace to output HDMI1"
-  i3-msg "workspace 10, move workspace to output HDMI1"
-elif xrandr -q | grep "HDMI1 disconnected"; then
-  xrandr --output HDMI1 --auto 
-  if xrandr -q | grep "DP2 connected"; then 
-    sleep 0.2
-    i3-msg "workspace 3, move workspace to output DP2"
-    i3-msg "workspace 4, move workspace to output DP2"
-    i3-msg "workspace 6, move workspace to output DP2"
-    i3-msg "workspace 7, move workspace to output DP2"
-    i3-msg "workspace 8, move workspace to output DP2"
-    i3-msg "workspace 9, move workspace to output DP2"
-    i3-msg "workspace 10, move workspace to output DP2"
-  fi
+if xrandr -q | grep "DP1-2-8 connected"; then 
+  xrandr --output DP1-2-8 --right-of eDP1 --scale 1.5x1.5 --mode 2560x1440 --primary
+  xrandr --output DP1-2-1-8 --pos 6400x50 --scale 1.6x1.6 --auto
+  i3-msg "workspace 2, move workspace to output DP1-2-1-8"
+  i3-msg "workspace 3, move workspace to output DP1-2-8"
+  i3-msg "workspace 4, move workspace to output DP1-2-8"
+  i3-msg "workspace 5, move workspace to output DP1-2-1-8"
+  i3-msg "workspace 6, move workspace to output DP1-2-8"
+  i3-msg "workspace 7, move workspace to output DP1-2-8"
+  i3-msg "workspace 8, move workspace to output DP1-2-8"
+  i3-msg "workspace 9, move workspace to output DP1-2-8"
+  i3-msg "workspace 10, move workspace to output DP1-2-8"
+elif xrandr -q | grep "DP1-2-8 disconnected"; then
+  xrandr --output DP1-2-8 --off
+  xrandr --output DP1-2-1-8 --off
+  xrandr --output eDP1 --auto --pos 0x1200
 fi
-
-if xrandr -q | grep "DP2 connected"; then 
-  xrandr --output DP2 --pos 6400x50 --scale 1.6x1.6 --auto
-  sleep 0.2
-  i3-msg "workspace 2, move workspace to output DP2"
-  i3-msg "workspace 5, move workspace to output DP2"
-elif xrandr -q | grep "DP2 disconnected"; then
-  xrandr --output DP2 --auto
-  if xrandr -q | grep "HDMI1 connected"; then 
-    sleep 0.2
-    i3-msg "workspace 2, move workspace to output HDMI1"
-    i3-msg "workspace 5, move workspace to output HDMI1"
-  fi
-fi
-
-sleep 0.2
 
 i3-msg "workspace 1, move workspace to output eDP1"
 
 ~/.config/polybar/launch.sh
 
-xrandr --output eDP1 --auto --pos 0x1200
+xrandr --output eDP1 --auto --primary
 
-if $(xrandr -q | grep "DP2 disconnected" && xrandr -q | grep "HDMI1 disconnected"); then 
+if $(xrandr -q | grep "DP1-2-8 disconnected"); then 
   feh --bg-fill wallpaper/iceberg.jpg
 else
   feh --bg-fill wallpaper/iceberg.jpg wallpaper/leaves.jpg wallpaper/snowflake.jpg
