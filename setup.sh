@@ -22,6 +22,7 @@ done < <(find "${dotfiles_source}" -type f)
 # Install dependencies
 sudo apt-get update --yes
 sudo apt-get install --yes command-not-found shellcheck httpie & disown
+sudo apt-get update --yes & disown # for command-not-found
 go install mvdan.cc/sh/v3/cmd/shfmt@latest & disown
 
 # Install oh-my-zsh
