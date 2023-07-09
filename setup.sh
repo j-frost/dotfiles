@@ -21,12 +21,18 @@ done < <(find "${dotfiles_source}" -type f)
 
 # Install dependencies
 sudo apt-get update --yes
-sudo apt-get install --yes command-not-found shellcheck httpie & disown
-sudo apt-get update --yes & disown # for command-not-found
-go install mvdan.cc/sh/v3/cmd/shfmt@latest & disown
+sudo apt-get install --yes command-not-found shellcheck httpie &
+disown
+sudo apt-get update --yes &
+disown # for command-not-found
+go install mvdan.cc/sh/v3/cmd/shfmt@latest &
+disown
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${HOME}"/powerlevel10k & disown
-git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions & disown
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting & disown
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${HOME}"/powerlevel10k &
+disown
+git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions &
+disown
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting &
+disown
