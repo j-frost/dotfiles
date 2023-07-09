@@ -125,6 +125,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function save_env_to_gitpod () {
+  echo "Saving file ${2} to Gitpod environment variable called ${1}"
+  gp env $1="$(base64 -w0 $2)" > /dev/null
+}
+
+function restore_file_from_gitpod () {
+  echo "Restoring file ${2} from Gitpod environment variable called ${1}"
+  echo ${(P)1} | base64 -d > ${2}
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
