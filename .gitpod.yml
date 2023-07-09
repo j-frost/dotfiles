@@ -1,6 +1,6 @@
-
 vscode:
   extensions:
     - mads-hartmann.bash-ide-vscode
     - timonwong.shellcheck
     - mkhl.shfmt
+    - editorconfig.editorconfig
