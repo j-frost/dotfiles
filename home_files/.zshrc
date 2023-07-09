@@ -78,7 +78,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   gcloud
   terraform
   npm
@@ -95,8 +94,6 @@ plugins=(
   extract
   colored-man-pages
   command-not-found
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   catimg
 )
 
