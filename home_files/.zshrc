@@ -135,7 +135,12 @@ function restore_file_from_gitpod () {
   echo ${(P)1} | base64 -d > ${2}
 }
 
-[[ -n $(command -v gcloud) ]] && alias gcloud-login="gcloud auth login --update-adc"
+if [[ -n $(command -v gcloud) ]] {
+  function gcloud-login () {
+    gcloud auth login --update-adc &&\
+    [[ -n "${GCP_PROJECT}" ]] && gcloud config set project $GCP_PROJECT
+  }
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
