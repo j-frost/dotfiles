@@ -33,3 +33,7 @@ function gitpod::restore_gcloud() {
 if [[ -n $(command -v gcloud) ]]; then
     gitpod::restore_gcloud
 fi
+
+if gp env | grep '^TFVARS'; then
+    gitpod::restore_file TFVARS "${GITPOD_REPO_ROOT}/terraform.tfvars"
+fi
