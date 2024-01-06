@@ -37,3 +37,7 @@ fi
 if gp env | grep '^TFVARS'; then
     gitpod::restore_file TFVARS "${GITPOD_REPO_ROOT}/terraform.tfvars"
 fi
+
+if gp env | grep '^DOTENV'; then
+    gitpod::restore_file DOTENV "${GITPOD_REPO_ROOT}/.env"
+fi
