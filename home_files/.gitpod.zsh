@@ -41,3 +41,7 @@ fi
 if gp env | grep '^DOTENV'; then
     gitpod::restore_file DOTENV "${GITPOD_REPO_ROOT}/.env"
 fi
+
+if gp env | grep '^DOTENV_KEYS_FILE'; then
+    gitpod::restore_file DOTENV_KEYS_FILE "${GITPOD_REPO_ROOT}/.env.keys"
+fi
