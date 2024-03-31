@@ -34,14 +34,14 @@ if [[ -n $(command -v gcloud) ]]; then
     gitpod::restore_gcloud
 fi
 
-if gp env | grep '^TFVARS'; then
+if gp env | grep -w 'TFVARS'; then
     gitpod::restore_file TFVARS "${GITPOD_REPO_ROOT}/terraform.tfvars"
 fi
 
-if gp env | grep '^DOTENV'; then
+if gp env | grep -w 'DOTENV'; then
     gitpod::restore_file DOTENV "${GITPOD_REPO_ROOT}/.env"
 fi
 
-if gp env | grep '^DOTENV_KEYS_FILE'; then
+if gp env | grep -w 'DOTENV_KEYS_FILE'; then
     gitpod::restore_file DOTENV_KEYS_FILE "${GITPOD_REPO_ROOT}/.env.keys"
 fi
